@@ -2,11 +2,11 @@
 
 ◯概要
 このコードを用いて，Twitterにおいて自分と自分がフォローしているユーザーのフォロー関係を分析する為のテキストファイルをつくることができます．
-今回はcytoscape(http://www.cytoscape.org/)での分析のためのテキストファイル書き出しを想定していますが，Pythonにこだわりたい方はNetworkX(http://networkx.lanl.gov/)を用いた分析をご検討ください．
+今回はcytoscape( http://www.cytoscape.org/ )での分析のためのテキストファイル書き出しを想定していますが，Pythonにこだわりたい方はNetworkX( http://networkx.lanl.gov/ )を用いた分析をご検討ください．
 尚，python2.7で動作が確認されています．
 
 ◯必要なライブラリ
-このコードはpython-twitterを利用しているため，先にそちらを導入してください．(http://code.google.com/p/python-twitter/)
+このコードはpython-twitterを利用しているため，先にそちらを導入してください．( http://code.google.com/p/python-twitter/ )
 導入方法については以下のURLなどを参照してください．
 http://aogum4.blog81.fc2.com/blog-entry-38.html
 
