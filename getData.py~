@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import twitter
+import os
 
 f = open('job.txt', 'r')
 lines = f.read()
@@ -34,10 +35,7 @@ for i in range(len(job)):
 		job[i] = 'NOBODY'
 		f = open('job.txt', 'w')
 		for j in len(job):
-			if j <= i:
-				f.write('NOBODY\n')
-			else:
-				f.write(job[j] + '\n')
+			f.write(job[j] + '\n')
 		f.close()
 
 		if checker >= 300:
