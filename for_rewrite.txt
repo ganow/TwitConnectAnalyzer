@@ -1,0 +1,23 @@
+class TwitterApi(Api):
+  def GetFriends(self, user=None, cursor=None):
+  	if not user and not self._oauth_consumer:
+  	  raise TwitterError("twitter.Api instance must be authenticated")
+  	if user:
+  	  url = 'http://api.twitter.com/1/statuses/friends/%s.json' % user 
+  	else:
+  	  url = 'http://api.twitter.com/1/statuses/friends.json'
+  	if cursor is None:
+  	  cursor = -1
+  	friends = []
+  	while True:
+  	  parameters = {'cursor': cursor}
+  	  json = self._FetchUrl(url, parameters=parameters)
+	  data = self._ParseAndCheckTwitter(json)
+  	  self._CheckForTwitterError(data)
+  	  cursor = data['next_cursor']
+  	  if not data['users']:
+  	  	break
+  	  for x in data['users']:
+  	  	currentfriends =  [User.NewFromJsonDict(x)]
+  	  	friends += currentfriends
+  	return friends

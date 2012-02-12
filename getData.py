@@ -35,6 +35,7 @@ for i in range(len(job)):
 		job[i] = 'NOBODY'
 
 		if checker >= 350:
+			print 'API上限です\n'
 			break
 reslut.close()
 
